@@ -39,7 +39,7 @@
 
 				} );
 
-				camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.001, 700 );
 				camera.layers.enable( 1 ); // render left view when no stereo available
 
 				// video

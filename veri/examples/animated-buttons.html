@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>veri - animated buttons</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #101010;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+			a {
+				color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="../dist/veri.js"></script>
+		<video id="veri" crossorigin="anonymous" autoplay loop src="https://threejs.org/examples/textures/MaryOculus.webm" style="display: none; width: 100%; height: 100%; background: black;" />
+        <script>
+
+            var veri = new Veri();
+
+            veri.setup({
+                controls: "auto",
+                vrEnabled: true,
+                polyfillWebVR: !!window.location.search.match("polyfill"),
+                stereoscopic: "left-to-right",
+                initializeCanvas: true,
+                camera: {
+                    fov: 90,          // wider -> narrower  (10..100)
+                    aspect: window.innerWidth / window.innerHeight,
+                    near: 0.1,
+                    far: 1000
+                },
+                renderer: {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                },
+                light: {
+                    position: Veri.vec3(2, 2, 2)
+                },
+                crosshairs: {
+                    type: "animated-buttons",
+                    debug: true,
+                    targets: {
+                        "button1": {
+                            direction: Veri.rot3(0, -100),
+                            hitRadius: 16,
+                            hitTime: 3000,
+                            sprite: {
+                                src: "../resources/sprite/light_003.png",
+                                distance: 400,
+                                columns: 5,
+                                rows: 6,
+                                count: 26,
+                                objWidth: 192,
+                                objHeight: 192,
+                                direction: Veri.rot3(0, -100)
+                            }
+                        },
+                        "button2": {
+                            direction: Veri.rot3(0, -60),
+                            hitRadius: 16,
+                            hitTime: 3000,
+                            sprite: {
+                                src: "../resources/sprite/magic_007.png",
+                                distance: 400,
+                                columns: 5,
+                                rows: 4,
+                                count: 20,
+                                objWidth: 192,
+                                objHeight: 192,
+                                direction: Veri.rot3(0, -60)
+                            }
+                        },
+                        "button3": {
+                            direction: Veri.rot3(0, -20),
+                            hitRadius: 16,
+                            hitTime: 3000,
+                            sprite: {
+                                src: "../resources/sprite/wind_001.png",
+                                distance: 400,
+                                columns: 5,
+                                rows: 5,
+                                count: 25,
+                                objWidth: 192,
+                                objHeight: 192,
+                                direction: Veri.rot3(0, -20)
+                            }
+                        }
+                    },
+                    sprite: {
+                        src: "resources/img/crosshairs.png",
+                        distance: 380,
+                        objWidth: 50,
+                        objHeight: 50,
+                        columns: 1,
+                        rows: 1,
+                        count: 1
+                    }
+                },
+            });
+
+            veri.start();
+
+		</script>
+	</body>
+</html>

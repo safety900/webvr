@@ -79,8 +79,8 @@
         window.addEventListener("resize", function () {
             engine.resize();
         });
-		window.addEventListener("vrdisplaypresentchange", function () {
-            console.log("vrdisplaypresentchange");
+		window.addEventListener("vrdisplaypointerrestricted", function () {
+            console.log("vrdisplaypointerrestricted");
         });
 		$(".babylonVRicon").click(function(){
 			vid.play();

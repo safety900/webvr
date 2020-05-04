@@ -79,9 +79,11 @@
         window.addEventListener("resize", function () {
             engine.resize();
         });
-		$(".babylonVRicon").click(function(){
-			vid.play();
-		});		
+		$(document).ready(function(){
+			$(".babylonVRicon").click(function(){
+				vid.play();
+			});	
+		});	
     </script>
  </body>
 </html>
